@@ -1,12 +1,10 @@
 #canvas{
-    width: 16rem;
+    width: 960px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .square{
-    width: 16px;
-    height: 16px;
     border: 1px solid black;
     border-collapse: collapse;
 }
