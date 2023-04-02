@@ -1,41 +1,17 @@
-let rgb = 255;
-function createCanvas(max) {
-  for (let i = 0; i < max; i++) {
-    for (let i = 0; i < max; i++) {
-      let square = document.createElement("div");
-      square.classList.add("square");
-      square.style.width = 960 / max + "px";
-      square.style.height = 960 / max + "px";
-      square.addEventListener("mouseover", () => {
-        rgb = rgb - 25;
-        square.style.backgroundColor =
-          "rgb(" +
-          Math.random() * rgb +
-          "," +
-          Math.random() * rgb +
-          "," +
-          Math.random() * rgb +
-          ")";
-          console.log(rgb);
-          if (rgb <= 5) {
-            rgb = 255;
-          }
-      });
-      document.getElementById("canvas").appendChild(square);
-    }
-  }
-}
+let test = document.getElementById("canvas");
 
-function validateNumber(num) {
-  if (num > 100) {
-    return 16;
-  }
-  return num;
-}
-
-createCanvas(16);
-
-document.getElementById("size").addEventListener("click", () => {
-  document.getElementById("canvas").innerHTML = "";
-  createCanvas(validateNumber(prompt("Introduce size")));
+test.addEventListener("mousemove", (e) => {
+  let x = document.getElementById("canvas");
+  let y = document.getElementById("canvas").getContext("2d");
+  let coordX = e.clientX - x.offsetLeft;
+  let coordY = e.clientY - x.offsetTop;
+  y.beginPath();
+  y.moveTo(coordX, coordY);
+  y.lineWidth = 50;
+  y.strokeStyle = "#000";
+  y.lineCap = "round";
+  y.lineJoin = "round";
+  y.lineTo(coordX, coordY);
+  y.stroke();
 });
+
