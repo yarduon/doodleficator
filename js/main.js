@@ -1,8 +1,9 @@
 let test = document.getElementById("canvas");
-
+let x = document.getElementById("canvas");
 test.addEventListener("mousemove", (e) => {
-  let x = document.getElementById("canvas");
+
   let y = document.getElementById("canvas").getContext("2d");
+ 
   let coordX = e.clientX - x.offsetLeft;
   let coordY = e.clientY - x.offsetTop;
   y.beginPath();
@@ -15,3 +16,8 @@ test.addEventListener("mousemove", (e) => {
   y.stroke();
 });
 
+
+window.addEventListener("resize", () => {
+    x.width = window.innerWidth;
+    x.height= window.innerHeight;
+})
