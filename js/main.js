@@ -13,9 +13,16 @@ function createCanvas(max) {
   }
 }
 
+function validateNumber(num){
+    if(num > 100){
+        return 16;
+    }
+    return num;
+}
+
 createCanvas(16);
 
 document.getElementById("size").addEventListener("click", () => {
     document.getElementById("canvas").innerHTML = "";
-    createCanvas(prompt("Introduce size"));
+    createCanvas(validateNumber(prompt("Introduce size")));
 })
