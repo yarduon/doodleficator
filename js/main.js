@@ -1,7 +1,8 @@
+// https://yarduon.com
 let test = document.getElementById("canvas");
 let x = document.getElementById("canvas");
 x.width = window.innerWidth;
-x.height= window.innerHeight;
+x.height = window.innerHeight;
 
 test.addEventListener("mousemove", (e) => {
   let y = document.getElementById("canvas").getContext("2d");
@@ -17,10 +18,9 @@ test.addEventListener("mousemove", (e) => {
   y.stroke();
 });
 
-
 window.addEventListener("resize", () => {
-    let temp = ctx.getImageData(0,0,test.width,test.height)
-    x.width = window.innerWidth;
-    x.height= window.innerHeight;
-    ctx.putImageData(temp,0,0)
-})
+  let temp = ctx.getImageData(0, 0, test.width, test.height);
+  x.width = window.innerWidth;
+  x.height = window.innerHeight;
+  ctx.putImageData(temp, 0, 0);
+});

@@ -1,8 +1,9 @@
-#canvas{
-    border: 1px solid black;
+/* https://yarduon.com */
+#canvas {
+  border: 1px solid black;
 }
 
-.square{
-    border: 1px solid black;
-    border-collapse: collapse;
+.square {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
